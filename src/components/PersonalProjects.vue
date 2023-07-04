@@ -32,9 +32,9 @@
 import { PERSONAL_PROJECTS } from '@/projects'
 
 const OVERLAY_COLOURS: string[] = [
-  'rgba(146, 141, 181, 0.95)',
-  'rgba(118, 153, 137, 0.95)',
-  'rgba(196, 140, 134, 0.95)'
+  'rgba(179, 228, 255, 0.95)',
+  'rgba(250, 173, 165, 0.95)',
+  'rgba(250, 234, 165, 0.95)'
 ]
 
 const getRandomOverlayColour = (): string => {
@@ -104,11 +104,16 @@ const getRandomOverlayColour = (): string => {
 
 .personal-project-overlay {
   position: absolute;
-  display: none;
   height: 100%;
   width: 100%;
   z-index: 10;
   cursor: pointer;
+  top: 100%;
+  transition: top 0.25s;
+}
+
+.personal-project:hover > .personal-project-overlay {
+  top: 0;
 }
 
 .personal-project-overlay > div {
@@ -117,11 +122,6 @@ const getRandomOverlayColour = (): string => {
   width: 100%;
   box-sizing: border-box;
   padding: 5%;
-}
-
-.personal-project:hover > .personal-project-overlay {
-  display: block;
-  animation: 0.2s ease-in 0s opacityOverlay;
 }
 
 @keyframes slideUpHeader {
@@ -145,12 +145,6 @@ const getRandomOverlayColour = (): string => {
   75% {
     transform: translateY(20px);
     opacity: 0;
-  }
-}
-
-@keyframes opacityOverlay {
-  from {
-    transform: translateY(100%);
   }
 }
 </style>

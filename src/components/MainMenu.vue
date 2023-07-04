@@ -23,6 +23,7 @@
   width: calc(100vw - 20px);
   border-bottom: 1px solid var(--main-text-color);
   background-color: var(--main-bg-color);
+  z-index: 20;
 }
 
 #menu {

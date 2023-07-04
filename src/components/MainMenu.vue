@@ -21,8 +21,8 @@
   top: 0px;
   padding: 20px 0;
   width: calc(100vw - 20px);
-  border-bottom: 1px solid black;
-  background-color: white;
+  border-bottom: 1px solid var(--main-text-color);
+  background-color: var(--main-bg-color);
 }
 
 #menu {
@@ -32,8 +32,9 @@
   align-items: center;
   list-style: none;
   font-size: large;
+  flex-wrap: wrap;
   padding: 0;
-  margin: 0 10%;
+  margin: 0 var(--side-margin);
 }
 
 .menu-item {
@@ -55,10 +56,10 @@
 
 .link > a:link,
 .link > a:visited {
-  color: black;
+  color: var(--main-text-color);
 }
 
 .link > a:hover {
-  color: grey;
+  color: lightgray;
 }
 </style>

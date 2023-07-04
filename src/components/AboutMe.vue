@@ -16,8 +16,7 @@
 
 <style scoped>
 #about-me {
-  margin-top: 100px;
-  margin-left: 10%;
+  margin: 100px var(--side-margin) 0 var(--side-margin);
   width: 50%;
 }
 

@@ -1,9 +1,10 @@
-<script setup lang="ts">
-</script>
-
 <template>
-  Hello world!
+  <MainMenu />
 </template>
 
-<style scoped>
-</style>
+<script setup lang="ts">
+import MainMenu from '@/components/MainMenu.vue'
+import '@/main.css'
+</script>
+
+<style scoped></style>

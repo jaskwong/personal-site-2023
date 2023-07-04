@@ -32,9 +32,9 @@
 import { PERSONAL_PROJECTS } from '@/projects'
 
 const OVERLAY_COLOURS: string[] = [
-  'rgba(179, 228, 255, 0.95)',
-  'rgba(250, 173, 165, 0.95)',
-  'rgba(250, 234, 165, 0.95)'
+  'rgba(179, 228, 255, 0.92)',
+  'rgba(250, 173, 165, 0.92)',
+  'rgba(250, 234, 165, 0.92)'
 ]
 
 const getRandomOverlayColour = (): string => {

@@ -20,6 +20,12 @@
   width: 50%;
 }
 
+@media (max-width: 990px) {
+  #about-me {
+    width: calc(100% - calc(2 * var(--side-margin)));
+  }
+}
+
 #about-me-header {
   animation: 1s ease-in 0s slideUpHeader;
 }

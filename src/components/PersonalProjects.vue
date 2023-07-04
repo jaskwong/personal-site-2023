@@ -2,16 +2,45 @@
   <div id="personal-projects">
     <h1 id="personal-projects-header">projects</h1>
     <div id="personal-projects-grid">
-      <div class="personal-project"></div>
-      <div class="personal-project"></div>
-      <div class="personal-project"></div>
-      <div class="personal-project"></div>
-      <div class="personal-project"></div>
+      <div
+        v-for="project in PERSONAL_PROJECTS"
+        class="personal-project"
+        :style="{ backgroundImage: 'url(' + project.image + ')' }"
+        :key="project.link"
+      >
+        <div
+          :onclick="'window.open(\'' + project.link + '\', \'mywindow\')'"
+          class="personal-project-overlay"
+          :style="{
+            backgroundColor: getRandomOverlayColour()
+          }"
+        >
+          <div>
+            <h3>{{ project.name }} - {{ project.year }}</h3>
+            {{ project.description }}
+            <br />
+            <br />
+            {{ project.components.join(', ') }}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { PERSONAL_PROJECTS } from '@/projects'
+
+const OVERLAY_COLOURS: string[] = [
+  'rgba(146, 141, 181, 0.95)',
+  'rgba(118, 153, 137, 0.95)',
+  'rgba(196, 140, 134, 0.95)'
+]
+
+const getRandomOverlayColour = (): string => {
+  return OVERLAY_COLOURS[Math.floor(Math.random() * OVERLAY_COLOURS.length)]
+}
+</script>
 
 <style scoped>
 #personal-projects {
@@ -32,17 +61,67 @@
 
 .personal-project {
   height: 0;
-  width: 32%;
-  padding-bottom: 32%;
-  background-color: rgba(125, 125, 125, 0.1);
-  margin-right: 2%;
-  margin-top: 2%;
+  position: relative;
   border-radius: 20px;
   animation: 4s ease-in 0s slideUpBody;
+  overflow: hidden;
+  margin-right: 2%;
+  margin-top: 2%;
+
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-#personal-projects .personal-project:nth-child(3n + 3) {
-  margin-right: 0;
+@media (min-width: 990px) {
+  .personal-project {
+    width: 32%;
+    padding-bottom: 32%;
+  }
+
+  .personal-project:nth-child(3n + 3) {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 672px) and (max-width: 990px) {
+  .personal-project {
+    width: 49%;
+    padding-bottom: 49%;
+  }
+
+  .personal-project:nth-child(2n + 2) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 672px) {
+  .personal-project {
+    width: 100%;
+    padding-bottom: 100%;
+    margin-right: 0;
+  }
+}
+
+.personal-project-overlay {
+  position: absolute;
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.personal-project-overlay > div {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5%;
+}
+
+.personal-project:hover > .personal-project-overlay {
+  display: block;
+  animation: 0.2s ease-in 0s opacityOverlay;
 }
 
 @keyframes slideUpHeader {
@@ -66,6 +145,12 @@
   75% {
     transform: translateY(20px);
     opacity: 0;
+  }
+}
+
+@keyframes opacityOverlay {
+  from {
+    transform: translateY(100%);
   }
 }
 </style>

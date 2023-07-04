@@ -26,7 +26,7 @@
 
 #about-me-description {
   line-height: 2em;
-  animation: 2s ease-in 0s slideUpDescription;
+  animation: 2s ease-in 0s slideUpBody;
 }
 
 @keyframes slideUpHeader {
@@ -36,14 +36,14 @@
   }
 }
 
-@keyframes slideUpDescription {
+@keyframes slideUpBody {
   0% {
     transform: translateY(20px);
     opacity: 0;
   }
 
   50% {
-    transform: translateY(10%);
+    transform: translateY(20px);
     opacity: 0;
   }
 }

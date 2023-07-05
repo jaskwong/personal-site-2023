@@ -1,3 +1,5 @@
+import PersonalSiteImage from "@/assets/personal_site_2023.png"
+
 export type project = {
   year: number
   name: string
@@ -15,6 +17,6 @@ export const PERSONAL_PROJECTS: project[] = [
       'A website to showcase my personal projects. I hope to continuously update this as I work on more things so I can see them all in one place - kind of like a coding scrapbook.',
     components: ['typescript', 'css', 'vue.js', 'yarn'],
     link: 'https://github.com/jaskwong/personal-site-2023',
-    image: '/src/assets/personal_site_2023.png'
+    image: PersonalSiteImage
   }
 ]

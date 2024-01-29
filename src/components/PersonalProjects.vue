@@ -68,7 +68,7 @@ const getRandomOverlayColour = (): string => {
   margin-right: 2%;
   margin-top: 2%;
 
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 

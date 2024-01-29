@@ -1,4 +1,6 @@
 import PersonalSiteImage from "@/assets/personal_site_2023.png"
+import TaylorSwiftSearchImage from "@/assets/taylorswift_song_search_2023.png"
+import Word2VecImage from "@/assets/word2vec_2024.png"
 
 export type project = {
   year: number
@@ -10,6 +12,24 @@ export type project = {
 }
 
 export const PERSONAL_PROJECTS: project[] = [
+  {
+    year: 2024,
+    name: 'word2vec',
+    description:
+      'Single-layer neural network that converts words to dense vector encodings using gradient descent with cross-entropy loss and backpropogation.',
+    components: ['Python, NumPy, pandas'],
+    link: 'https://github.com/jaskwong/word2vec',
+    image: Word2VecImage
+  },
+  {
+    year: 2023,
+    name: 'taylor swift song search',
+    description:
+      'ElasticSearch index and data crawler to searcb Taylor Swift songs and lyrics.',
+    components: ['ElasticSearch, JavaScript'],
+    link: 'https://github.com/jaskwong/taylor-swift-song-search',
+    image: TaylorSwiftSearchImage
+  },
   {
     year: 2023,
     name: 'personal website',

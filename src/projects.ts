@@ -25,7 +25,7 @@ export const PERSONAL_PROJECTS: project[] = [
     year: 2023,
     name: 'taylor swift song search',
     description:
-      'ElasticSearch index and data crawler to searcb Taylor Swift songs and lyrics.',
+      'ElasticSearch index and data crawler to search Taylor Swift songs and lyrics.',
     components: ['ElasticSearch, JavaScript'],
     link: 'https://github.com/jaskwong/taylor-swift-song-search',
     image: TaylorSwiftSearchImage
